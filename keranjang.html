@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keranjang Belanja</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: #faf5ff;
+      padding: 40px;
+    }
+
+    .keranjang-container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #6a1b9a;
+      font-size: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    th {
+      background: #6a1b9a;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background: #f8eaff;
+    }
+
+    .product-img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .qty-box {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .qty-box button {
+      padding: 6px 12px;
+      background: #6a1b9a;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .qty-box button:hover {
+      background: #8e24aa;
+    }
+
+    .checkout {
+      margin-top: 25px;
+      text-align: right;
+    }
+
+    .checkout button {
+      background: linear-gradient(120deg, #fdd835, #ffee58);
+      padding: 14px 28px;
+      border: none;
+      border-radius: 40px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      transition: 0.35s;
+      color: #5e1786;
+    }
+
+    .checkout button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+  
+    /* --- STYLE ENHANCEMENT: MORE LUXURY + ANIMASI HALUS --- */
+
+    /* Smooth Fade-in */
+    .keranjang-container {
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Luxury Border Glow */
+    .keranjang-container {
+      border: 1px solid rgba(106,27,154,0.25);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Table Enhancements */
+    table tr:hover {
+      background: #f3d7ff;
+      transition: 0.3s ease;
+    }
+
+    th {
+      background: linear-gradient(120deg, #4a0072, #6a1b9a);
+      letter-spacing: 1px;
+    }
+
+    /* Empty cart text shimmer */
+    .empty-text {
+      animation: shimmer 3s linear infinite;
+      background: linear-gradient(120deg, #b8860b, #ffd700, #fff8dc, #ffd700);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* Button elevate */
+    .checkout button {
+      animation: softPulse 2.5s infinite;
+    }
+
+    @keyframes softPulse {
+      0% { transform: scale(1); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+      50% { transform: scale(1.03); box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+      100% { transform: scale(1); }
+    }
+
+</style>
+</head>
+<body>
+
+  <div class="keranjang-container">
+    <h2>Keranjang Belanja</h2>
+    <table>
+      <tr>
+        <th>Produk</th>
+        <th>Harga</th>
+        <th>Kuantitas</th>
+        <th>Total</th>
+      </tr>
+
+      <tr><td colspan="4" style="text-align:center; padding:25px; color:#6a1b9a; font-size:1.1rem;"><span class='empty-text'>Keranjang masih kosong</span></td></tr>
+
+      <tr><td colspan="4" style="text-align:center; padding:25px; color:#6a1b9a; font-size:1.1rem;">Keranjang masih kosong</td></tr>
+    </table>
+
+    <div class="checkout">
+      <button>Checkout Sekarang</button>
+    </div>
+  </div>
+
+</body>
+</html>

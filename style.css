@@ -1,0 +1,338 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* ROOT COLOR VARIABLES */
+:root {
+  --primary: #6a1b9a;
+  --secondary: #9c27b0;
+  --accent: #fdd835;
+  --light-bg: #faf5ff;
+  --card-bg: #ffffff;
+  --text-dark: #333;
+}
+
+/* BODY */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  line-height: 1.7;
+  color: var(--text-dark);
+  background: radial-gradient(circle at top, #f3e5f5, #ffffff);
+}
+
+/* HEADER */
+header {
+  animation: fadeUp 1s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 60px;
+  background: linear-gradient(120deg, #4a0072, #6a1b9a, #9c27b0);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  backdrop-filter: blur(5px);
+}
+
+header .logo {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 3px;
+}
+
+header nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  left: 0;
+  bottom: -6px;
+  transition: width 0.35s ease;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* LUXURY ANIMATIONS */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 0 rgba(253,216,53,0.4); }
+  50% { box-shadow: 0 0 25px rgba(253,216,53,0.7); }
+  100% { box-shadow: 0 0 0 rgba(253,216,53,0.4); }
+}
+
+/* HERO SECTION */
+.hero {
+  background: url('img/banner.jpg/banner - Copy.jpg') no-repeat center center/cover;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(106,27,154,0.85), rgba(178,100,226,0.55));
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 28px;
+  opacity: 0.95;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* BUTTON */
+.btn {
+  animation: glow 3s infinite;
+  display: inline-block;
+  background: linear-gradient(120deg, #fdd835, #ffee58);
+  color: #5e1786;
+  padding: 14px 36px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 40px;
+  letter-spacing: 1px;
+  transition: 0.35s ease;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+/* KATEGORI SECTION */
+.kategori {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.kategori h2 {
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+  color: var(--primary);
+  position: relative;
+}
+
+.kategori h2::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: var(--accent);
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 5px;
+}
+
+.grid-kategori {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+  position: relative;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(106,27,154,0.15));
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.card { animation: float 6s ease-in-out infinite; }
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.card img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card { animation: float 6s ease-in-out infinite; }
+
+.card:hover img {
+  transform: scale(1.12);
+}
+
+.card h3 {
+  padding: 18px;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+
+/* PRODUK UNGGULAN */
+.produk-unggulan {
+  padding: 80px 50px;
+  background: linear-gradient(to bottom, #f3e5f5, #fff);
+  text-align: center;
+}
+
+.produk-unggulan h2 {
+  margin-bottom: 40px;
+  font-size: 2.4rem;
+  color: var(--primary);
+}
+
+.grid-produk {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+}
+
+.produk {
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 25px 55px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+}
+
+.produk img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.produk { animation: float 6s ease-in-out infinite; }
+
+.produk:hover img {
+  transform: scale(1.08);
+}
+
+.produk h3 {
+  margin: 18px 0 6px;
+  color: var(--text-dark);
+}
+
+.produk p {
+  margin-bottom: 22px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+.produk { animation: float 6s ease-in-out infinite; }
+
+.produk:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 65px rgba(0,0,0,0.18);
+}
+
+/* FOOTER */
+footer {
+  background: linear-gradient(120deg, #4a0072, #6a1b9a, #8e24aa);
+  color: #fff;
+  text-align: center;
+  padding: 35px 15px;
+  margin-top: 60px;
+  font-size: 0.95rem;
+  letter-spacing: 1.2px;
+}
+
+/* GLASSMORPHISM */
+.glass-lux {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+/* GOLD SHIMMER EFFECT */
+.shimmer-gold {
+  background: linear-gradient(120deg, #b8860b, #ffd700, #fff8dc, #ffd700, #b8860b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+  from { background-position: 0% center; }
+  to { background-position: 200% center; }
+}
+
+/* SCROLL REVEAL ANIMATION */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2.4rem;
+  }

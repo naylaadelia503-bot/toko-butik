@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produk - Butik Elegan</title>
+
+  <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f6f2fc;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: linear-gradient(90deg, #6a1b9a, #8e24aa);
+      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Shine effect logo */
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: transparent;
+      letter-spacing: 2px;
+      background: linear-gradient(90deg, #fce67e, #fdd835, #fff3b0);
+      -webkit-background-clip: text;
+      animation: shine 3s infinite linear;
+    }
+
+    @keyframes shine {
+      0% { filter: brightness(1); }
+      50% { filter: brightness(1.5); }
+      100% { filter: brightness(1); }
+    }
+
+    header nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    header nav a:hover,
+    header nav a.active {
+      color: #fdd835;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #fdd835;
+      transform: translateY(-2px);
+    }
+
+    /* Produk */
+    .daftar-produk {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    .daftar-produk h2 {
+      margin-bottom: 40px;
+      font-size: 2.7rem;
+      color: #6a1b9a;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .daftar-produk h2::after {
+      content: "";
+      width: 80px;
+      height: 4px;
+      background: #fdd835;
+      display: block;
+      margin: 10px auto 0;
+      border-radius: 10px;
+      animation: expandLine 1.2s ease;
+    }
+
+    @keyframes expandLine {
+      from { width: 0; }
+      to { width: 80px; }
+    }
+
+    /* Grid */
+    .grid-produk {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      animation: fadeUp 1s ease;
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Card Produk */
+    .produk {
+      background: rgba(255,255,255,0.8);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: 0.4s ease;
+      backdrop-filter: blur(10px);
+      transform: translateY(0);
+    }
+
+    .produk:hover {
+      transform: translateY(-12px) scale(1.03);
+      box-shadow: 0 12px 25px rgba(122, 0, 244, 0.25);
+    }
+
+    /* Gambar Produk */
+    .produk img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .produk:hover img {
+      transform: scale(1.08);
+      filter: brightness(1.05);
+    }
+
+    .produk h3 {
+      margin: 15px 0 5px;
+      color: #4a2c6b;
+      font-size: 1.2rem;
+    }
+
+    .produk p {
+      margin-bottom: 15px;
+      color: #6a1b9a;
+      font-weight: bold;
+      font-size: 1.15rem;
+    }
+
+    /* Tombol */
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, #fdd835, #fbc02d);
+      color: #6a1b9a;
+      padding: 10px 22px;
+      margin-bottom: 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(90deg, #6a1b9a, #8e24aa);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.25);
+    }
+
+    /* Fade In Global */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Butik Elegan</div>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="produk.html" class="active">Produk</a>
+      <a href="tentang.html">Tentang Kami</a>
+      <a href="kontak.html">Kontak</a>
+      <a href="keranjang.html">Keranjang</a>
+    </nav>
+  </header>
+
+
+
+  <!-- Produk -->
+  <section class="daftar-produk">
+    <h2>Koleksi Produk Kami</h2>
+
+    <div class="grid-produk">
+
+      <div class="produk">
+        <img src="foto butik/tote.jpg" alt="Tote Bag">
+        <h3>Tote Bag</h3>
+        <p>Rp 450.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/topi.jpg" alt="Topi Cantik">
+        <h3>Topi Cantik</h3>
+        <p>Rp 250.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/cargo.jpg" alt="Celana Cargo">
+        <h3>Celana Cargo</h3>
+        <p>Rp 120.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/anting.jpg" alt="Anting">
+        <h3>Anting</h3>
+        <p>Rp 350.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/heels.jpg" alt="Sepatu Heels">
+        <h3>Sepatu Heels</h3>
+        <p>Rp 400.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/cardigan.jpg" alt="Cardigan Kasual">
+        <h3>Cardigan Kasual</h3>
+        <p>Rp 280.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/alung.jpg" alt="Kalung">
+        <h3>Aksesoris Kalung</h3>
+        <p>Rp 150.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/2.jpg" alt="Jaket Bulu">
+        <h3>Jaket Bulu</h3>
+        <p>Rp 250.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/okr.jpg" alt="Rok Bahan">
+        <h3>Rok Bahan</h3>
+        <p>Rp 120.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/tasche.jpg" alt="Tas Elegan">
+        <h3>Tas Elegan</h3>
+        <p>Rp 200.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/pas.jpg" alt="Pashmina">
+        <h3>Pashmina</h3>
+        <p>Rp 100.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/kplk.jpeg" alt="Kupluk Bulu">
+        <h3>Kupluk Bulu</h3>
+        <p>Rp 80.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/jam.jpg" alt="Jam Cantik">
+        <h3>Jam Cantik</h3>
+        <p>Rp 800.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/pingg.jpg" alt="Ikat Pinggang">
+        <h3>Ikat Pinggang</h3>
+        <p>Rp 75.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/baju.jpg" alt="Baju Gamis">
+        <h3>Baju Gamis</h3>
+        <p>Rp 150.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+      <div class="produk">
+        <img src="foto butik/LEBARAN.jpg" alt="Baju Kaftan">
+        <h3>Baju Kaftan</h3>
+        <p>Rp 275.000</p>
+        <a href="detail-produk.html" class="btn">Lihat Detail</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Butik Elegan. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
